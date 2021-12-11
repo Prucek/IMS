@@ -3,15 +3,15 @@
 # Date: 8.12.2021
 
 
-all: clean algo
+all: clean simulation
 
-algo: 
-	g++ -std=c++11 -Wall -Wextra -Werror -pedantic algo.cpp -o algo -O3
+simulation: 
+	g++ -std=c++11 -Wall -Wextra -Werror -pedantic simulation.cpp -o simulation -O3
 
-run: clean algo
-	./algo
+run: clean simulation
+	./simulation
 
 .PHONY: clean
 
 clean:
-	rm -f algo
+	rm -f simulation
