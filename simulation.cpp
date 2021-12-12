@@ -118,7 +118,7 @@ public:
         srand(time(NULL));
         int Qcur = Q[0];
 
-        int CToc = 7200; // 7187.572 , Cycle Time Oven Cure
+        int CToc = 7200; // Cycle Time Oven Cure
 
         Qcur = Q[rand() % 3];
         long Ttotal= ( (Td-STda())*((86400-DDda())/86400) + Td +(Td-STwb())*((86400-DDwb())/86400)+Td ) * M ;
@@ -450,12 +450,12 @@ void Expetiment2()
     const int numberOfRuns = 10;
     int averageFactoriesCount = 0;
 
-    for (int i = 0; i < numberOfRuns; i++) // average of 10 runs might be enough
+    for (int i = 0; i < numberOfRuns; i++) // average of 10 runs
     {
         int factoriesCount = 0;
         while (true)
         {
-            long long count = GenerateFactories(3, factoriesCount, 365*24*60*60);
+            long long count = GenerateFactories(3, factoriesCount, 365*24*60*60); // one year
             if (count > TOTAL_2021)
             {
                 break;
@@ -490,14 +490,14 @@ void Expetiment3()
     {
         int averageFactoriesCount = 0;
         int averageCount = 0;
-        for (int i = 0; i < numberOfRuns; i++) // average of 10 runs might be enough
+        for (int i = 0; i < numberOfRuns; i++) // average of 10
         {
             int factoriesCount = 0;
             long rise = (totalByNYears / 100) * 6.25;
             long long count = 0;
             while (true)
             {
-                count = GenerateFactories(3, factoriesCount, 365*60*60*24);
+                count = GenerateFactories(3, factoriesCount, 365*60*60*24); // one year
                 if (count > rise) // 6.25 % from previous year
                 {
                     break;
